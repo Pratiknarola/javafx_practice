@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="400.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Button fx:id="ClickButton" mnemonicParsing="false" onAction="#ShowMsg" prefHeight="75.0" prefWidth="204.0" text="Hey! Click me!" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</GridPane>
