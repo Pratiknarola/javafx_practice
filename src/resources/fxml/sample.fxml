@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<Scene stylesheets="@background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Scene stylesheets="@../css/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <root>
-      <GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="600.0" stylesheets="@background.css" vgap="10">
+      <GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/background.css" vgap="10">
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
@@ -39,22 +39,22 @@
                </font>
             </Label>
             <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField prefHeight="30.0" prefWidth="400.0" promptText="Username" stylesheets="@textfield.css" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField prefHeight="30.0" prefWidth="400.0" promptText="Username" stylesheets="@../css/textfield.css" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font name="Montserrat-Regular" size="13.0" />
                </font>
             </TextField>
-            <PasswordField prefHeight="30.0" prefWidth="300.0" promptText="Password" stylesheets="@textfield.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <PasswordField prefHeight="30.0" prefWidth="300.0" promptText="Password" stylesheets="@../css/textfield.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font name="Montserrat-Regular" size="13.0" />
                </font>
             </PasswordField>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@cancel.css" text="Cancel" translateX="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/cancel.css" text="Cancel" translateX="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font name="Montserrat-Regular" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="110.0" layoutY="272.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@loginbtn.css" text="Log In" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Button layoutX="110.0" layoutY="272.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/loginbtn.css" text="Log In" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font name="Montserrat-Regular" size="18.0" />
                </font>
