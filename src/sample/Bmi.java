@@ -54,9 +54,10 @@ public class Bmi extends Application{
     public void calculateBMI(ActionEvent actionEvent) throws IOException {
         Float w = Float.parseFloat(weight.getText());
         Float h = Float.parseFloat(height.getText());
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../resources/fxml/popup.fxml"));
-
+        //AnchorPane pane = FXMLLoader.load(getClass().getResource("../resources/fxml/popup.fxml"));
         float BMI = (float) (w/(h*h*0.01*0.01));
+
+        System.out.println(BMI);
 
     }
 
