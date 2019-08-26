@@ -13,23 +13,29 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
 public class Bmi extends Application{
+
     @FXML
     TextField height;
     @FXML
     TextField weight;
+    @FXML
+    Button calculateBtn;
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../resources/fxml/bmi.fxml"));
         primaryStage.setTitle("BMI Calculator");
-        primaryStage.setScene(new Scene(root, 600, 400));
-
+        Scene primary = new Scene(root, 600, 400);
+        primaryStage.setScene(primary);
         primaryStage.show();
+
     }
 
 
@@ -44,20 +50,47 @@ public class Bmi extends Application{
         //primaryStage.setScene(scene1);
         //primaryStage.show();
 
+    public static void main(String[] args) {
+        launch(args);
+    }
 
 
-        public static void main(String[] args) {
-            launch(args);
-        }
 
-    @FXML
     public void calculateBMI(ActionEvent actionEvent) throws IOException {
-        Float w = Float.parseFloat(weight.getText());
-        Float h = Float.parseFloat(height.getText());
+        float w = Float.parseFloat(weight.getText());
+        float h = Float.parseFloat(height.getText());
         //AnchorPane pane = FXMLLoader.load(getClass().getResource("../resources/fxml/popup.fxml"));
-        float BMI = (float) (w/(h*h*0.01*0.01));
+        Float BMI = (float) (w/(h*h*0.01*0.01));
+        Parent popup = FXMLLoader.load(getClass().getResource("../resources/fxml/popup.fxml"));
 
-        System.out.println(BMI);
+            new Thread(()-> {
+                FileWriter fstream = null;
+                try {
+                    fstream = new FileWriter("out.txt");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                assert fstream != null;
+                BufferedWriter out = new BufferedWriter(fstream);
+                try {
+                    out.write(Float.toString(BMI));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                //Close the output stream
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+
+
+        Stage pop;
+        pop = new Stage();
+
+        pop.setScene(new Scene(popup, 600, 400));
+        pop.show();
 
     }
 

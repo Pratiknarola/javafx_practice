@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.fxml.Popup">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.popupController">
    <children>
       <VBox layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -23,7 +22,7 @@
                         <Insets left="160.0" top="80.0" />
                      </HBox.margin>
                   </Label>
-                  <Label prefHeight="40.0" prefWidth="92.0" text="________">
+                  <Label fx:id="bmivalue" prefHeight="40.0" prefWidth="92.0" text="________">
                      <HBox.margin>
                         <Insets left="50.0" top="80.0" />
                      </HBox.margin>
@@ -33,10 +32,13 @@
                   </Label>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="140.0" text="Button">
+            <Button fx:id="back" mnemonicParsing="false" onAction="#backtomain" prefHeight="60.0" prefWidth="140.0" text="Back">
                <VBox.margin>
                   <Insets bottom="70.0" left="230.0" right="230.0" top="30.0" />
                </VBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
             </Button>
          </children>
       </VBox>
